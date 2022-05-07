@@ -1,0 +1,23 @@
+.main {
+    display: grid;
+    width: 100%;
+    min-height: 90vh;
+    grid-template-columns: 15rem 1fr;
+    grid-template-areas: "sidebar content";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border: 2px solid black;
+}
+
+.content {
+    grid-area: content;
+    border: 2px solid black;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

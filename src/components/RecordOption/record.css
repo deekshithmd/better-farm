@@ -1,0 +1,11 @@
+.inner-item{
+    padding: 5px;
+    background-color: rgb(42, 87, 87);
+    border: 2px solid black;
+    margin: 1rem auto;
+    border-radius: 5px;
+}
+
+.record-options{
+    margin-left: 1rem;
+}
