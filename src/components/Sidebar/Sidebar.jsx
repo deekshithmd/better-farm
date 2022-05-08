@@ -18,7 +18,7 @@ export const Sidebar = () => {
         style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
         className="list-item"
       >
-        News
+        News Portal
       </NavLink>
 
       <NavLink
@@ -26,7 +26,7 @@ export const Sidebar = () => {
         style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
         className="list-item"
       >
-        Todo
+        Todo List
       </NavLink>
 
       <NavLink
@@ -35,7 +35,7 @@ export const Sidebar = () => {
         className="list-item list"
         onClick={() => setShow(!show)}
       >
-        Records{show && <RecordOption />}
+        Record Store{show && <RecordOption />}
       </NavLink>
     </div>
   );

@@ -1,34 +1,4 @@
-.main {
-    display: grid;
+.home{
     width: 100%;
-    min-height: 90vh;
-    grid-template-columns: 15rem 1fr;
-    grid-template-areas: "sidebar content";
-}
-
-.sidebar {
-    grid-area: sidebar;
-    border-right: 2px solid black;
-}
-
-.content {
-    grid-area: content;
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and(max-width:480px) {
-    .main {
-        display: grid;
-        width: 100%;
-        min-height: 90vh;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "sidebar"
-            "content";
-    }
+    min-height: 80vh;
 }

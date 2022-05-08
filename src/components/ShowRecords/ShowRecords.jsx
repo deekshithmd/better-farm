@@ -2,7 +2,7 @@ import "./showrecords.css";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useData } from "../../contexts";
 export const ShowRecords = () => {
-  const { data } = useData();
+  const { data, dispatch } = useData();
   return (
     <div className="main">
       <div className="sidebar">
@@ -15,17 +15,38 @@ export const ShowRecords = () => {
               return (
                 <div className="single-record text-sm" key={record._id}>
                   <span className="record-heading text-center font-semibold text-sm">
-                  {record.date}
+                    {record.date}
                   </span>
                   <ul className="record-info border-r-4">
-                    <li>Created By : {record.doneby}</li>
-                    <li>Category : {record.category}</li>
-                    <li>Sub-Category : {record.subcategory}</li>
-                    <li>To be Monitored: {record.notice}</li>
+                    <li>
+                      <span className="font-medium"> Created By : </span>
+                      {record.doneby}
+                    </li>
+                    <li>
+                      <span className="font-medium">Category : </span>
+                      {record.category}
+                    </li>
+                    <li>
+                      <span className="font-medium">Sub-Category : </span>
+                      {record.subcategory}
+                    </li>
+                    <li>
+                      <span className="font-medium">To be Monitored: </span>
+                      {record.notice}
+                    </li>
                   </ul>
                   <div className="work-data pl-5 text-justify">
+                    <span className="font-medium underline">Details : </span>
                     {record.details}
                   </div>
+                  <button
+                    className="record-footer text-center font-semibold text-sm bg-red-300 rounded-lg flex mt-3"
+                    onClick={() =>
+                      dispatch({ type: "DELETE_RECORD", payload: record })
+                    }
+                  >
+                    Delete Record
+                  </button>
                 </div>
               );
             })
