@@ -7,7 +7,7 @@
 ## Table of contents
  * [About](#about)
  * [Features](#features)
- * [Walkthrough](#walkthrough)
+ * [Functionalities](#functionalities)
 
 ### About
 BetterFarm is an application developed by taking farmer's community as audience. This application helps farmers to keep track of the activities they performed in the field and provided few features which helps them to improve their productivity.
@@ -24,5 +24,12 @@ BetterFarm is an application developed by taking farmer's community as audience.
 4. Todo application <br>
   This is used to keep note of what are the things needs to be completed. So whatever the next process need to be done will continue in expected pace. <br>
   
-
-
+### Functionalities
+1. View All News
+2. View Detailed Single News
+3. Add Todo
+4. Mark Completed by Clicking on todo
+5. Clear completed Todos
+6. View Records
+7. Create New Records
+8. Delete Record
