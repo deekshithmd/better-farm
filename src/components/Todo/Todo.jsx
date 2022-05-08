@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 export const Todo = () => {
   const [todo, setTodo] = useState("");
   const { data, dispatch } = useData();
+  console.log(data)
 
   return (
     <div className="main">
