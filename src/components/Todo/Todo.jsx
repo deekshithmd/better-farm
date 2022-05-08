@@ -43,7 +43,7 @@ export const Todo = () => {
                   return (
                     todo.pending && (
                       <li
-                        className="cursor-pointer"
+                        className="cursor-pointer my-1"
                         key={todo._id}
                         onClick={() =>
                           dispatch({
@@ -56,7 +56,20 @@ export const Todo = () => {
                           })
                         }
                       >
-                        {todo.todo}
+                        {todo.todo}{" "}
+                        <button
+                        className="p-1 bg-green-500 border-2 rounded-md border-black text-sm"
+                          onClick={() =>
+                            dispatch({
+                              type: "TODO_COMPLETE",
+                              payload: {
+                                _id: todo._id,
+                                todo: todo.todo,
+                                pending: false,
+                              },
+                            })
+                          }
+                        >Mark Done</button>
                       </li>
                     )
                   );
@@ -75,7 +88,7 @@ export const Todo = () => {
                 {data.todos.map((todo) => {
                   return (
                     !todo.pending && (
-                      <li className="cursor-pointer" key={todo._id}>
+                      <li className="cursor-pointer my-1" key={todo._id}>
                         {todo.todo}
                       </li>
                     )
