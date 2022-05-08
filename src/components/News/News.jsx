@@ -1,8 +1,11 @@
 import "./news.css";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useData } from "../../contexts";
+import { useNavigate } from "react-router-dom";
 export const News = () => {
-  const { news } = useData();
+  const navigate = useNavigate();
+  const { data } = useData();
+
   return (
     <div className="main">
       <div className="sidebar">
@@ -10,24 +13,25 @@ export const News = () => {
       </div>
       <div className="content">
         <div className="news-container flex">
-        {
-              news.articles.map(n=>{
-                  return(
-                    <div className="news-card" key={n._id}>
-                    <div className="heading text-lg font-semibold text-justify">{n.title}</div>
-                    <div className="news-image">
-                      <img
-                        src={n.media}
-                        alt="NewsImage"
-                      />
-                    </div>
-                    <div className="description text-sm text-justify">
-                     {n.summary}
-                    </div>
-                  </div>
-                  )
-              })
-          }
+          {data?.news?.articles?.map((news) => {
+            return (
+              <div
+                className="news-card"
+                key={news._id}
+                onClick={() => navigate(`/singlenews/${news._id}`)}
+              >
+                <div className="heading text-lg font-semibold text-justify truncate">
+                  {news.title}
+                </div>
+                <div className="news-image">
+                  <img src={news.media} alt="NewsImage" />
+                </div>
+                <div className="description text-sm text-justify text-clip overflow-hidden text-ellipsis">
+                  {news.summary}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,19 +1,23 @@
-.content{
+.content {
     flex-direction: column;
 }
-.record-data{
+
+.record-data {
     flex-direction: column;
     border: 2px solid black;
     width: 30rem;
     border-radius: 7px;
 }
-input,textarea{
+
+input,
+textarea {
     width: 20rem;
     padding: 5px 1rem;
-    border:2px solid black;
+    border: 2px solid black;
     border-radius: 7px;
 }
-input[type="date"]{
+
+input[type="date"] {
     font-size: 1rem;
     font-weight: 600;
 }

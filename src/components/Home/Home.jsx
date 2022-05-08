@@ -1,16 +1,15 @@
 import "./home.css";
 import { Link } from "react-router-dom";
-import { Sidebar } from "../Sidebar/Sidebar";
 export const Home = () => {
   return (
-    <div className="main">
-      <div className="sidebar">
-        <Sidebar />
-      </div>
-      <div className="content">
-        <h1>Home</h1>
-        <Link to="/news">see</Link>
-      </div>
+    <div className="home flex flex-col bg-green-400">
+      <span className="text-6xl font-bold">BetterFarm</span>
+      <Link
+        to="/news"
+        className="p-1.5 text-xl bg-green-600 rounded-lg hover:bg-green-500 border-2 border-cyan-600"
+      >
+        Explore
+      </Link>
     </div>
   );
 };

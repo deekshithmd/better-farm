@@ -1,12 +1,12 @@
-.news-container{
+.news-container {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 2rem;
 }
 
-.news-card{
-    width: 25rem;
-    height: max-content;
+.news-card {
+    width: 25vw;
+    height: 18rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -15,21 +15,24 @@
     padding: 1rem;
 }
 
-.heading{
-    height: 10%;
+.heading {
+    height: 2rem;
+    width: 100%;
 }
 
-.news-image{
-width: 70%;
-height: 50%;
-padding: 1rem;
+.news-image {
+    width: 70%;
+    height: 10rem;
+    padding: 1rem;
 }
 
-.news-image img{
+.news-image img {
     width: 100%;
     height: 100%;
 }
 
-.description{
-    height: 40%;
+.description {
+    height: 4rem;
+    width: 100%;
+    word-wrap:break-word;
 }

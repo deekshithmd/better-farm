@@ -1,11 +1,12 @@
 import {
   useContext,
   createContext,
-  useState,
   useEffect,
   useReducer,
 } from "react";
+
 import axios from "axios";
+
 import { Reducer } from "../Reducer/Reducer";
 
 const DataContext = createContext(null);
@@ -17,45 +18,50 @@ const DataProvider = ({ children }) => {
         _id: "AA1A",
         date: "2022-05-08",
         doneby: "Deekshith",
-        category: "Dairy",
-        subcategory: "Feed",
-        notice: "Monitor 1st cow",
+        category: "Sample",
+        subcategory: "Sample-1",
+        notice: "Notice Sample",
         details:
-          "Provided Feed to first cow need to montior for further development",
+          "Sample details stored to provide demo of application to the panalists...",
       },
     ],
-    todos: [],
+    todos: [
+      {
+        _id: "as67576asd",
+        todo: "Complete Sample Today",
+        pending: true,
+      },
+      {
+        _id: "sfs6f8s67",
+        todo: "Completed Today",
+        pending: false,
+      },
+    ],
+    news: [],
   });
-  const [news, setNews] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const r = await axios.get("https://api.newscatcherapi.com/v2/search", {
-        params: {
-          q: "agriculture",
-          lang: "en",
-          sort_by: "relevancy",
-          page: "1",
-        },
-        headers: {
-          "x-api-key": "Lm0OQ97Dagokl0qv9XPXyoVZqetWo23wN594qjJDH0k",
-        },
-      });
-      setNews(r.data);
-      // if (JSON.parse(localStorage.getItem("records"))?.length > 1) {
-      //   console.log("from context");
-      //   dispatch({
-      //     type: "ADD_RECORD",
-      //     payload: JSON.parse(localStorage.getItem("records")),
-      //   });
-      // } else {
-      //   localStorage.setItem("records", JSON.stringify(data.records));
-      // }
+      const newsResponse = await axios.get(
+        "https://api.newscatcherapi.com/v2/search",
+        {
+          params: {
+            q: "agriculture",
+            lang: "en",
+            sort_by: "relevancy",
+            page: "1",
+          },
+          headers: {
+            "x-api-key": "Lm0OQ97Dagokl0qv9XPXyoVZqetWo23wN594qjJDH0k",
+          },
+        }
+      );
+      dispatch({ type: "LOAD_NEWS", payload: newsResponse.data });
     })();
   }, []);
 
   return (
-    <DataContext.Provider value={{ news, data, dispatch }}>
+    <DataContext.Provider value={{data, dispatch }}>
       {children}
     </DataContext.Provider>
   );

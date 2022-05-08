@@ -6,7 +6,6 @@ import { v4 as uuid } from "uuid";
 export const Todo = () => {
   const [todo, setTodo] = useState("");
   const { data, dispatch } = useData();
-  console.log(data)
 
   return (
     <div className="main">
@@ -40,27 +39,38 @@ export const Todo = () => {
           <div className="pending border-r-2 border-black flex-center flex-col">
             {data.todos?.length > 0 ? (
               <ol>
-                {data.todos.map((t) => {
+                {data.todos.map((todo) => {
                   return (
-                    t.pending && (
-                      <>
+                    todo.pending && (
                       <li
-                        className="cursor-pointer"
-                        key={t._id}
+                        className="cursor-pointer my-1"
+                        key={todo._id}
                         onClick={() =>
                           dispatch({
                             type: "TODO_COMPLETE",
                             payload: {
-                              _id: t._id,
-                              todo: t.todo,
+                              _id: todo._id,
+                              todo: todo.todo,
                               pending: false,
                             },
                           })
                         }
                       >
-                        {t.todo}
+                        {todo.todo}{" "}
+                        <button
+                        className="p-1 bg-green-500 border-2 rounded-md border-black text-sm"
+                          onClick={() =>
+                            dispatch({
+                              type: "TODO_COMPLETE",
+                              payload: {
+                                _id: todo._id,
+                                todo: todo.todo,
+                                pending: false,
+                              },
+                            })
+                          }
+                        >Mark Done</button>
                       </li>
-                      </>
                     )
                   );
                 })}
@@ -75,11 +85,11 @@ export const Todo = () => {
           <div className="completed flex-center flex-col">
             {data.todos?.length > 0 ? (
               <ol>
-                {data.todos.map((t) => {
+                {data.todos.map((todo) => {
                   return (
-                    !t.pending && (
-                      <li className="cursor-pointer" key={t._id}>
-                        {t.todo}
+                    !todo.pending && (
+                      <li className="cursor-pointer my-1" key={todo._id}>
+                        {todo.todo}
                       </li>
                     )
                   );
@@ -90,6 +100,16 @@ export const Todo = () => {
             )}
           </div>
         </div>
+        <button
+          className="p-1.5 text-xl bg-red-600 rounded-lg hover:bg-red-700 border-2 border-indigo-600 mt-8"
+          onClick={() => {
+            dispatch({
+              type: "CLEAR_COMPLETED",
+            });
+          }}
+        >
+          Clear Completed Todos
+        </button>
       </div>
     </div>
   );

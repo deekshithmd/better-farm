@@ -1,0 +1,20 @@
+.single-news-card {
+    width: 50vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 2rem auto;
+}
+
+.single-news-image {
+    margin: 1rem auto;
+}
+
+.news-dexcription {
+    width: 100%;
+    word-wrap: break-word;
+}

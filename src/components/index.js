@@ -7,3 +7,4 @@ export { RecordOption } from "./RecordOption/RecordOption";
 export { Todo } from "./Todo/Todo";
 export { CreateRecord } from "./CreateRecord/CreateRecord";
 export { ShowRecords } from "./ShowRecords/ShowRecords";
+export { SingleNews } from "./SingleNews/SingleNews";

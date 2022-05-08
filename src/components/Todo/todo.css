@@ -50,19 +50,3 @@ ol {
 ol li::marker {
     font-weight: 500;
 }
-
-@media screen and(min-width:480px) {
-    .todo-container {
-        display: grid;
-        width: 100%;
-        min-height: 20rem;
-        grid-template-columns: 1fr;
-        grid-template-rows: 3rem 1fr 3rem 1fr;
-        grid-template-areas:
-            "heading-1"
-            "pending "
-            "heading-2"
-            "completed";
-        border: 2px solid black;
-    }
-}

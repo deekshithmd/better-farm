@@ -3,15 +3,15 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import { useData } from "../../contexts";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
+
 export const CreateRecord = () => {
-  const { data, dispatch } = useData();
+  const {dispatch } = useData();
   const navigate=useNavigate()
 
   const addRecord = (event) => {
     event.preventDefault();
     const { date, doneby, category, subcategory, notice, details } =
       event.target.elements;
-    console.log("from create")
     dispatch({
       type: "ADD_RECORD",
       payload: {
@@ -57,7 +57,7 @@ export const CreateRecord = () => {
             <input type="text" name="subcategory" />
           </label>
           <label htmlFor="notice" className="m-1.5">
-            Things to Notice: <br />
+            Things to Monitor: <br />
             <input type="text" name="notice" />
           </label>
           <label htmlFor="details" className="m-1.5">

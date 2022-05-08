@@ -9,10 +9,11 @@
     border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2rem auto;
+    grid-template-rows: 2rem auto 3rem;
     grid-template-areas:
         "heading heading"
-        "record work";
+        "record work"
+        "footer footer";
     padding: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -30,4 +31,8 @@
 
 .work-data {
     grid-area: work;
+}
+
+.record-footer{
+    grid-area: footer;
 }
