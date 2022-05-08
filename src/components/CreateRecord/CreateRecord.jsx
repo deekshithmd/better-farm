@@ -4,7 +4,7 @@ import { useData } from "../../contexts";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 export const CreateRecord = () => {
-  const { data, dispatch } = useData();
+  const {dispatch } = useData();
   const navigate=useNavigate()
 
   const addRecord = (event) => {
