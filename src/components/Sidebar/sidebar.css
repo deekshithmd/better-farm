@@ -1,0 +1,15 @@
+.sidebar-content {
+    flex-direction: column;
+    position: sticky;
+    top: 5rem;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.list-item {
+    width: 100%;
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 5px;
+    list-style: none;
+}
