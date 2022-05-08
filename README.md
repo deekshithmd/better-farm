@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.postimg.cc/zGQS5X7w/better-Farm.png" width="150px" height="130px"/>
+  <img src="https://i.postimg.cc/zGQS5X7w/better-Farm.png" width="200px" height="130px"/>
 </p>
 
 # BetterFarm
