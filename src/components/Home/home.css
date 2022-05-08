@@ -8,16 +8,27 @@
 
 .sidebar {
     grid-area: sidebar;
-    border: 2px solid black;
+    border-right: 2px solid black;
 }
 
 .content {
     grid-area: content;
-    border: 2px solid black;
 }
 
 .flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and(max-width:480px) {
+    .main {
+        display: grid;
+        width: 100%;
+        min-height: 90vh;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "content";
+    }
 }

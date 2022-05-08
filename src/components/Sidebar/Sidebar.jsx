@@ -22,20 +22,20 @@ export const Sidebar = () => {
       </NavLink>
 
       <NavLink
+        to="/todo"
+        style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
+        className="list-item"
+      >
+        Todo
+      </NavLink>
+
+      <NavLink
         to="/show"
         style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
         className="list-item list"
         onClick={() => setShow(!show)}
       >
         Records{show && <RecordOption />}
-      </NavLink>
-
-      <NavLink
-        to="/todo"
-        style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
-        className="list-item"
-      >
-        Todo
       </NavLink>
     </div>
   );

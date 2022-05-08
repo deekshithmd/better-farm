@@ -12,7 +12,19 @@ const DataContext = createContext(null);
 
 const DataProvider = ({ children }) => {
   const [data, dispatch] = useReducer(Reducer, {
-    records: [],
+    records: [
+      {
+        _id: "AA1A",
+        date: "2022-05-08",
+        doneby: "Deekshith",
+        category: "Dairy",
+        subcategory: "Feed",
+        notice: "Monitor 1st cow",
+        details:
+          "Provided Feed to first cow need to montior for further development",
+      },
+    ],
+    todos: [],
   });
   const [news, setNews] = useState([]);
 
@@ -30,12 +42,15 @@ const DataProvider = ({ children }) => {
         },
       });
       setNews(r.data);
-      if( JSON.parse(localStorage.getItem("records"))){
-      dispatch({
-        type: "ADD_RECORD",
-        payload: JSON.parse(localStorage.getItem("records")),
-      });
-    }
+      // if (JSON.parse(localStorage.getItem("records"))?.length > 1) {
+      //   console.log("from context");
+      //   dispatch({
+      //     type: "ADD_RECORD",
+      //     payload: JSON.parse(localStorage.getItem("records")),
+      //   });
+      // } else {
+      //   localStorage.setItem("records", JSON.stringify(data.records));
+      // }
     })();
   }, []);
 
